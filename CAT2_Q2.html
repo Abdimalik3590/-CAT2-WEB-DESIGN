@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        /* Centering form on page */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7e7ce;
+            margin: 0;
+        }
+
+        /* Form container styling */
+        .form-container {
+            background-color: #ececff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        /* Input field styling */
+        .input-group {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .input-group img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .input-group input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        /* Button styling */
+        .register-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #6f42c1;
+            color: #fff;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .register-btn:hover {
+            background-color: #5a34a1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <!-- Name input -->
+        <div class="input-group">
+            <img src="user-icon.png" alt="User Icon"> <!-- Replace with actual icon path -->
+            <input type="text" placeholder="Name">
+        </div>
+
+        <!-- Email input -->
+        <div class="input-group">
+            <img src="email-icon.png" alt="Email Icon"> <!-- Replace with actual icon path -->
+            <input type="email" placeholder="Email ID">
+        </div>
+
+        <!-- Phone input -->
+        <div class="input-group">
+            <img src="phone-icon.png" alt="Phone Icon"> <!-- Replace with actual icon path -->
+            <input type="tel" placeholder="Phone">
+        </div>
+
+        <!-- Password input -->
+        <div class="input-group">
+            <img src="lock-icon.png" alt="Lock Icon"> <!-- Replace with actual icon path -->
+            <input type="password" placeholder="Set Password">
+        </div>
+
+        <!-- Register button -->
+        <button class="register-btn">REGISTER</button>
+    </div>
+
+</body>
+</html>
