@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Pay Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <h2>Employee Pay Calculator</h2>
+    <input type="text" id="employeeName" placeholder="Employee Name" required>
+    <input type="number" id="hoursWorked" placeholder="Hours Worked" required>
+    <input type="number" id="ratePerHour" placeholder="Rate per Hour" required>
+    <button onclick="calculatePay()">Calculate</button>
+
+
+    <div class="result" id="result"></div>
+</div>
+
+
+<script>
+    function calculatePay() {
+        // Get input values
+        const employeeName = document.getElementById("employeeName").value;
+        const hoursWorked = parseFloat(document.getElementById("hoursWorked").value);
+        const ratePerHour = parseFloat(document.getElementById("ratePerHour").value);
+
+
+        // Calculate basic pay
+        const basicPay = hoursWorked * ratePerHour;
+
+
+        // Calculate tax based on basic pay
+        let tax = 0;
+        if (basicPay > 50000) {
+            tax = basicPay * 0.20;
+        } else if (basicPay >= 20000 && basicPay <= 50000) {
+            tax = basicPay * 0.10;
+        }
+
+
+        // Calculate net pay
+        const netPay = basicPay - tax;
+
+
+        // Display the result
+        document.getElementById("result").innerHTML = `
+            <strong>Results:</strong><br>
+            Employee Name: ${employeeName} <br>
+            Hours Worked: ${hoursWorked} <br>
+            Rate per Hour: $${ratePerHour.toFixed(2)} <br>
+            Basic Pay: $${basicPay.toFixed(2)} <br>
+            Tax: $${tax.toFixed(2)} <br>
+            Net Pay: $${netPay.toFixed(2)}
+        `;
+    }
+</script>
+
+
+</body>
+</html>
